@@ -14,3 +14,7 @@ The goal is simple:
 - opinionated
 - commercially useful
 - not tied to screenshots only
+- `conversion-critic.md` — critiques whether a design or flow actually increases trust, clarity, momentum, and action.
+- `ux-pattern-researcher.md` — researches practical UX patterns and translates them into product-specific recommendations.
+- `brand-system-critic.md` — evaluates brand systems for coherence, distinctiveness, scalability, and trust.
+- `product-narrative-critic.md` — critiques product positioning, story clarity, differentiation, and trustworthiness.
