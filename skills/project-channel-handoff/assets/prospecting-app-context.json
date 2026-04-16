@@ -1,0 +1,30 @@
+{
+  "projectName": "Prospecting App",
+  "intro": "# Prospecting App — project handoff\nThis channel is the working home for the Prospecting App project. Below is the compressed handoff context so future work can start fast.",
+  "sections": [
+    {
+      "title": "1. Project overview",
+      "body": "The Prospecting App is a Sunburnt AI sales tool. A rep inputs prospect information and a company website, the system scrapes the site, runs AI analysis, and produces a sales-ready recommendation brief. The app is designed to support sales discovery, tailoring of Sunburnt AI products, and eventually one-click demo workflows."
+    },
+    {
+      "title": "2. Core repos",
+      "body": "App repo: https://github.com/AgentChrisAI/ProspectingForAIAgencies\nPrompt library repo: https://github.com/AgentChrisAI/agent-prompts"
+    },
+    {
+      "title": "3. Current app architecture",
+      "body": "Stack: Next.js + TypeScript. Flow: intake form -> website extraction -> digest model -> reasoning model -> structured recommendation report. Model plan: anthropic/claude-haiku-4.5 for digesting, anthropic/claude-opus-4.6 for reasoning via OpenRouter. Server-side protections added: JSON cleanup, zod validation, retry path, heuristic digest fallback, improved error handling, and multi-site testing harness."
+    },
+    {
+      "title": "4. Design direction",
+      "body": "Current direction: premium restrained SaaS / operator-console / sales-briefing aesthetic. The earlier glassy AI dashboard style was replaced with a more professional, summary-first, calmer interface. The product should feel like a sales briefing console rather than an AI toy dashboard."
+    },
+    {
+      "title": "5. Important docs",
+      "body": "In ProspectingForAIAgencies repo: demo-strategy/DEMO-STRATEGY.md, TOP-10-PRODUCT-DEMO-PRIORITY-LIST.md, DEMO-DEFINITION-SPEC.md, ALLOWED-CLAIMS-FRAMEWORK.md, INSTANT-DEMO-UX-FLOW.md, MIMIC-ENGINE-DESIGN.md. In agent-prompts repo: design-critique-specialist.md, design-critique-orchestration-lead.md, conversion-critic.md, ux-pattern-researcher.md, brand-system-critic.md, product-narrative-critic.md."
+    },
+    {
+      "title": "6. Key milestones and priorities",
+      "body": "Key app milestones included initial build, analysis hardening, design refinement, and full SaaS redesign. Priorities ahead: stronger demo workflows, summary-first output, instant demo orchestration, and continued refinement of sales utility."
+    }
+  ]
+}
