@@ -1,54 +1,64 @@
 ---
 name: project-channel-handoff
-description: Create a new project channel and transfer curated project context into it. Use when a user wants a fresh Discord/communication channel for an active project and needs the essential context moved cleanly instead of dumping raw chat history. Best for repo-backed projects with architecture, decisions, docs, links, and next steps that should be posted as a structured handoff pack.
+description: Create a new project channel and transfer curated project context into it. Use when a user wants a fresh Discord or communication channel for an active project and needs the essential context moved cleanly instead of dumping raw chat history. Best for repo-backed projects where you should generate a templated handoff pack covering overview, repos, architecture, docs, key decisions, current status, priorities, and links.
 ---
 
 # Project Channel Handoff
 
-Use this skill when a project needs its own new channel and the user wants the project context transferred into it.
+Use this skill when a project needs a new channel and the important context should be transferred cleanly.
+
+## Goal
+Create a reusable, readable handoff pack that future agents and humans can use without reading the original chat history.
 
 ## Workflow
 1. Build a **curated context pack** instead of dumping raw history.
-2. Include only durable project context:
+2. Include durable project context only:
    - project overview
-   - core repos
+   - core repos and links
    - architecture
+   - business/product context
+   - design/UX direction
    - important docs
-   - key decisions
+   - key milestones and decisions
    - current status
-   - known priorities / next steps
-   - important commits or links
-3. Create the new channel.
-4. Post the context pack as multiple structured messages.
-5. Keep the first message short and orienting; post the heavy context in follow-up sections.
+   - priorities / next steps
+3. Generate the context JSON from a reusable template if a project-specific file does not already exist.
+4. Create the new channel.
+5. Post the handoff pack as multiple structured messages.
 
 ## Rules
 - Prefer structured handoff over literal full-history transfer.
-- Do not include secrets, tokens, or private local-only paths unless explicitly necessary and safe.
+- Do not include secrets, tokens, or unsafe internal details.
 - Split long context into readable chunks.
 - Name the channel clearly from the project slug.
-- If a reusable script exists, use it instead of rebuilding by hand.
+- If a reusable script exists, use it instead of hand-building the same process again.
 
-## Included script
-Use `scripts/create-project-channel.js` for Discord channel creation and context posting.
+## Included files
+### Script: generate templated context
+Use `scripts/generate-project-context.js` to create a project context JSON from a reusable template.
 
-### Expected inputs
-- guild id
-- channel name / project name
-- path to handoff context JSON
-- optional parent category id
-- optional topic
+Example:
+```bash
+node scripts/generate-project-context.js \
+  --template ./assets/project-context-template.json \
+  --project-name "My Project" \
+  --out ./assets/my-project-context.json
+```
 
-### Example
+### Script: create channel and post context
+Use `scripts/create-project-channel.js` to create a Discord channel and post the handoff pack.
+
+Example:
 ```bash
 node scripts/create-project-channel.js \
   --guild-id <guild_id> \
-  --name "prospecting-app" \
-  --context ./assets/prospecting-app-context.json
+  --name "my-project" \
+  --context ./assets/my-project-context.json
 ```
 
-## Included asset
-- `assets/prospecting-app-context.json` is an example context pack for the Prospecting App project.
+## Assets
+- `assets/project-context-template.json` — reusable generic handoff template
+- `assets/prospecting-app-context.json` — example filled project handoff
 
 ## What good looks like
-A future agent should be able to enter the new channel, read the posted handoff messages, and understand the project quickly without needing the original chat transcript.
+A new channel should open with a short orientation message followed by a structured handoff pack. A future agent should be able to read it and understand the project quickly without needing the original conversation.

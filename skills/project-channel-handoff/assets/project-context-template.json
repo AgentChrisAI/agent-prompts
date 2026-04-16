@@ -1,0 +1,46 @@
+{
+  "projectName": "PROJECT_NAME",
+  "intro": "# PROJECT_NAME — project handoff\nThis channel is the working home for the project. Below is the compressed handoff context so future work can start fast.",
+  "sections": [
+    {
+      "title": "1. Project overview",
+      "body": "What the project is, who it serves, what problem it solves, and what the current operating goal is."
+    },
+    {
+      "title": "2. Core repos and links",
+      "body": "Primary repo URLs, supporting repo URLs, product links, design links, docs links, deployment links, and test URLs."
+    },
+    {
+      "title": "3. Current architecture",
+      "body": "Describe the stack, major flow, key services/models/APIs, and important implementation patterns."
+    },
+    {
+      "title": "4. Product / business context",
+      "body": "Important domain context, customer/user context, strategic intent, and key product logic that future agents or teammates need to know."
+    },
+    {
+      "title": "5. Design / UX direction",
+      "body": "Current design direction, UX principles, visual language choice, and what the product should feel like."
+    },
+    {
+      "title": "6. Important docs",
+      "body": "List the key docs, specs, strategy files, prompt libraries, and where they live."
+    },
+    {
+      "title": "7. Key milestones / decisions",
+      "body": "Important commits, architectural decisions, major redesigns, and notable implementation milestones."
+    },
+    {
+      "title": "8. Current status",
+      "body": "What is done, what is working, what is hosted, what is broken, and what still needs verification."
+    },
+    {
+      "title": "9. Priorities / next steps",
+      "body": "The most important next work items, in order."
+    },
+    {
+      "title": "10. Handoff rule",
+      "body": "Use structured context packs instead of raw dumping full chat history. Preserve the important state: overview, repos, architecture, docs, decisions, status, priorities, and links."
+    }
+  ]
+}
